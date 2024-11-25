@@ -27,9 +27,3 @@ class VRP():
     def get_travel_duration(self, i, j):
         return 0
 
-
-
-case = Case("test_case_1.xlsx")
-
-print(case.get_s_dict())
-print(case.)
