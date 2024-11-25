@@ -1,6 +1,6 @@
 import pandas as pd
 
-class Case():
+class VRP():
 
     def __init__(self, FILE_NAME):
         self.FILE_NAME = FILE_NAME
@@ -15,7 +15,11 @@ class Case():
     def get_z_dict(self):
         return pd.Series(self.df_machine_properties['End Depot'].values, index=self.df_machine_properties['Machine']).to_dict()
 
+    def get_Ns_set(self):
+        return self.df_machine_properties['Start Depot'].values
 
+    def get_Nz_set(self):
+        return self.df_machine_properties['End Depot'].values
 
     def get_travel_cost(self, i, j):
         return 0
@@ -23,6 +27,9 @@ class Case():
     def get_travel_duration(self, i, j):
         return 0
 
+
+
 case = Case("test_case_1.xlsx")
 
 print(case.get_s_dict())
+print(case.)
