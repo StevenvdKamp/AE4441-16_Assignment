@@ -150,3 +150,5 @@ for i in N_a:
     rhs = 0
     model.addLConstr(lhs=lhs24_1, sense=gp.GRB.LESS_EQUAL, rhs=rhs, name=f"(24_1) i={i}")
     model.addLConstr(lhs=lhs24_2, sense=gp.GRB.LESS_EQUAL, rhs=rhs, name=f"(24_2) i={i}")
+
+# TODO IMPLEMENT u[i] functionality
