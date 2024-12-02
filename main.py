@@ -76,12 +76,12 @@ for i in N_a:
 # t^d_i:    The execution time (days) of a job i ∈ N_a is given by the decision variables t^d_i and t^m_i.
 td = {}
 for i in N_a:
-    td[i] = model.addVar(lb=0, ub=float('inf'), vtype=gp.GRB.CONTINUOUS, name=f"Job {i} is executed on day:")
+    td[i] = model.addVar(lb=0, ub=float('inf'), vtype=gp.GRB.INTEGER, name=f"Job {i} is executed on day:")
 
 # t^m_i:    The execution time (minutes) of a job i ∈ N_a is given by the decision variables t^d_i and t^m_i.
 tm = {}
 for i in N_a:
-    tm[i] = model.addVar(lb=0, ub=u_max, vtype=gp.GRB.CONTINUOUS, name=f"Job {i} is executed on minute:")
+    tm[i] = model.addVar(lb=0, ub=u_max, vtype=gp.GRB.INTEGER, name=f"Job {i} is executed on minute:")
 
 model.update()
 
@@ -208,3 +208,23 @@ for i in N:
 
 model.setObjective(obj, gp.GRB.MINIMIZE)
 model.update()
+
+################
+### Optimize ###
+################
+
+# Writing the .lp file. Important for debugging
+model.write('model_formulation.lp')    
+
+# Here the model is actually being optimized
+model.optimize()
+
+# Saving our solution in the form [name of variable, value of variable]
+solution = []
+for v in model.getVars():
+     print(v.varName, v.x)
+     solution.append([v.varName,v.x])
+     
+# print(solution)
+
+print("This is the end")
