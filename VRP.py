@@ -9,25 +9,19 @@ class VRP():
         self.df_node_properties = pd.read_excel(FILE_NAME, sheet_name='Node Properties')
         self.df_machine_properties = pd.read_excel(FILE_NAME, sheet_name='Machine Properties')
 
-        print(self.df_node_connections)
-
-
-
-
     def get_s_dict(self):
         return pd.Series(self.df_machine_properties['Start Depot'].values, index=self.df_machine_properties['Machine']).to_dict()
 
     def get_z_dict(self):
         return pd.Series(self.df_machine_properties['End Depot'].values, index=self.df_machine_properties['Machine']).to_dict()
 
-    def get_Ns_set(self):
-        return set(self.df_machine_properties['Start Depot'].values)
-
-    def get_Nz_set(self):
-        return set(self.df_machine_properties['End Depot'].values)
-
     def get_a_dict(self):
         return pd.Series(self.df_node_properties['Working Duration'].values, index=self.df_node_properties['Node']).to_dict()
+
+    def get_u_dict(self):
+        a_dict = pd.Series(self.df_node_properties['Working Duration'].values, index=self.df_node_properties['Node']).to_dict()
+
+        return {key: 480 - value for key, value in a_dict.items()}
 
     def get_c_dict(self):
         return pd.Series(self.df_node_properties['Customer Cost Coefficient'].values, index=self.df_node_properties['Node']).to_dict()
@@ -58,3 +52,23 @@ class VRP():
 
         return travel_times_dict
 
+    def get_Ns_set(self):
+        return set(self.df_machine_properties['Start Depot'].values)
+
+    def get_Nz_set(self):
+        return set(self.df_machine_properties['End Depot'].values)
+
+    def get_Na_set(self):
+        Ns = set(self.df_machine_properties['Start Depot'].values)
+        Nz = set(self.df_machine_properties['Start Depot'].values)
+        N = set(self.df_node_properties['Node'].values)
+
+        Ns_and_Nz = Ns.union(Nz)
+
+        return N.difference(Ns_and_Nz)
+
+    def get_N_set(self):
+        return set(self.df_node_properties['Node'].values)
+
+    def get_M_set(self):
+        return set(self.df_machine_properties['Machine'].values)
