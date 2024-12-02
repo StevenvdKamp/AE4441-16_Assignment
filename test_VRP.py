@@ -41,6 +41,18 @@ class test_VRP(unittest.TestCase):
         self.assertDictEqual(d_dict, {(1, 2): 4, (1, 3): 2, (2, 3): 3, (4, 1): 5, (5, 1): 10,
                                       (2, 1): 4, (3, 1): 2, (3, 2): 3, (1, 4): 5, (1, 5): 10})
 
+    def test_get_Ns_set(self):
+        vrp = VRP.VRP("test cases/test_case_1.xlsx")
+        Ns_set = vrp.get_Ns_set()
+
+        self.assertSetEqual({4, 5}, Ns_set)
+
+    def test_get_Nz_set(self):
+        vrp = VRP.VRP("test cases/test_case_1.xlsx")
+        Nz_set = vrp.get_Nz_set()
+
+        self.assertSetEqual({4, 5}, Nz_set)
+
 # Running the tests
 if __name__ == "__main__":
     unittest.main()

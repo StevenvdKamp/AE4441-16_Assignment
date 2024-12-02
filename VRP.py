@@ -21,10 +21,10 @@ class VRP():
         return pd.Series(self.df_machine_properties['End Depot'].values, index=self.df_machine_properties['Machine']).to_dict()
 
     def get_Ns_set(self):
-        return self.df_machine_properties['Start Depot'].values
+        return set(self.df_machine_properties['Start Depot'].values)
 
     def get_Nz_set(self):
-        return self.df_machine_properties['End Depot'].values
+        return set(self.df_machine_properties['End Depot'].values)
 
     def get_a_dict(self):
         return pd.Series(self.df_node_properties['Working Duration'].values, index=self.df_node_properties['Node']).to_dict()
