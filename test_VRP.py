@@ -63,13 +63,13 @@ class test_VRP(unittest.TestCase):
         vrp = VRP.VRP("test cases/test_case_1.xlsx")
         Na_set = vrp.get_Na_set()
 
-        self.assertSetEqual({1, 2, 3}, Na_set)
+        self.assertSetEqual({1, 2, 3, 4, 5}, Na_set)
 
     def test_get_N_set(self):
         vrp = VRP.VRP("test cases/test_case_1.xlsx")
         N_set = vrp.get_N_set()
 
-        self.assertSetEqual({1, 2, 3, 4, 5}, N_set)
+        self.assertSetEqual({1, 2, 3}, N_set)
 
     def test_get_M_set(self):
         vrp = VRP.VRP("test cases/test_case_1.xlsx")

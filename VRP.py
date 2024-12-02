@@ -58,16 +58,16 @@ class VRP():
     def get_Nz_set(self):
         return set(self.df_machine_properties['End Depot'].values)
 
-    def get_Na_set(self):
+    def get_N_set(self):
         Ns = set(self.df_machine_properties['Start Depot'].values)
         Nz = set(self.df_machine_properties['Start Depot'].values)
-        N = set(self.df_node_properties['Node'].values)
+        Na = set(self.df_node_properties['Node'].values)
 
         Ns_and_Nz = Ns.union(Nz)
 
-        return N.difference(Ns_and_Nz)
+        return Na.difference(Ns_and_Nz)
 
-    def get_N_set(self):
+    def get_Na_set(self):
         return set(self.df_node_properties['Node'].values)
 
     def get_M_set(self):
