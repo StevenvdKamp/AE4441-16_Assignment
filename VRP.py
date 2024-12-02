@@ -9,6 +9,11 @@ class VRP():
         self.df_node_properties = pd.read_excel(FILE_NAME, sheet_name='Node Properties')
         self.df_machine_properties = pd.read_excel(FILE_NAME, sheet_name='Machine Properties')
 
+        print(self.df_node_connections)
+
+
+
+
     def get_s_dict(self):
         return pd.Series(self.df_machine_properties['Start Depot'].values, index=self.df_machine_properties['Machine']).to_dict()
 
@@ -21,9 +26,35 @@ class VRP():
     def get_Nz_set(self):
         return self.df_machine_properties['End Depot'].values
 
-    def get_travel_cost(self, i, j):
-        return 0
+    def get_a_dict(self):
+        return pd.Series(self.df_node_properties['Working Duration'].values, index=self.df_node_properties['Node']).to_dict()
 
-    def get_travel_duration(self, i, j):
-        return 0
+    def get_c_dict(self):
+        return pd.Series(self.df_node_properties['Customer Cost Coefficient'].values, index=self.df_node_properties['Node']).to_dict()
+
+    def get_d_dict(self):
+        start_nodes = self.df_node_connections['From'].values
+        end_nodes = self.df_node_connections['To'].values
+        travel_costs = self.df_node_connections['Cost'].values
+
+        travel_costs_dict = {}
+
+        for i in range(len(start_nodes)):
+            travel_costs_dict[(start_nodes[i], end_nodes[i])] = travel_costs[i]
+            travel_costs_dict[(end_nodes[i], start_nodes[i])] = travel_costs[i]
+
+        return travel_costs_dict
+
+    def get_r_dict(self):
+        start_nodes = self.df_node_connections['From'].values
+        end_nodes = self.df_node_connections['To'].values
+        travel_times = self.df_node_connections['Time [min]'].values
+
+        travel_times_dict = {}
+
+        for i in range(len(start_nodes)):
+            travel_times_dict[(start_nodes[i], end_nodes[i])] = travel_times[i]
+            travel_times_dict[(end_nodes[i], start_nodes[i])] = travel_times[i]
+
+        return travel_times_dict
 
