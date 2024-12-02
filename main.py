@@ -6,7 +6,7 @@ from VRP import VRP
 u_max = 480 # Minutes in a working day
 h = 1440 # Minutes in a day
 # TODO choose correct value
-bigM = 1e3
+bigM = 1e6
 
 #####################
 ### READ DATABASE ###
@@ -65,7 +65,7 @@ model = gp.Model("VRP-CC")
 x = {}
 for i in N_a:
     for j in N_a:
-        x[(i, j)] = model.addVar(lb=0, ub=1, vtype=gp.GRB.BINARY, name=f"Is job {j} predecessor of job {i}?")
+        x[(i, j)] = model.addVar(lb=0, ub=1, vtype=gp.GRB.BINARY, name=f"Is job {i} predecessor of job {j}?")
 
 # y_i:      The integer variable y_i represents the machine that executes job i
 #           A variable is made for every job and depot.
@@ -149,7 +149,6 @@ for i in N_s.union(N):
         rhs = 0
         model.addLConstr(lhs=lhs19, sense=gp.GRB.LESS_EQUAL, rhs=rhs, name=f"(19) i={i}, j={j}")
 
-# TODO (21) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 for k in M:
     lhs21_1 = gp.LinExpr()
     lhs21_2 = gp.LinExpr()
@@ -200,6 +199,9 @@ for i in N_a: # N_a: All jobs and depots
         # Exclude the case where i and j are the same job/depot
         if i == j:
             continue
+        # Exclude the case from going from the end depot to next route start depot in the tour
+        if (i in N_z) and (j in N_s):
+            continue
 
         obj += d[(i, j)] * x[(i, j)]
 
@@ -226,5 +228,3 @@ for v in model.getVars():
      solution.append([v.varName,v.x])
      
 # print(solution)
-
-print("This is the end")
