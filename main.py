@@ -1,28 +1,56 @@
 import numpy as np
 import gurobipy as gp
+import VRP
+
+# Constants
+u_max = 480 # Minutes in a working day
+h = 1440 # Minutes in a day
+# TODO choose correct value
+bigM = 1e3
 
 #####################
 ### READ DATABASE ###
 #####################
 
-# TODO: ARYAN
-N = [2, 3, 4] # All jobs
-N_s = [1, 5]
-N_z = [5, 6]
-N_a = [1, 2, 3, 4, 5, 6] # All jobs and depots
-M = [1, 2] # All machines
-m = len(M)
-u = 480 # Minutes in a working day
-h = 1440 # Minutes in a day
-z = {}
-z[1] = 5
-z[2] = 6
-s = {}
-s[1] = 1
-s[2] = 5
+vrp = VRP("data_example_2.xlsx")
+# Start depots
+N_s = vrp.get_Ns_set()
+# Start depot for machine (key)
+s = vrp.get_s_dict()
 
-# TODO choose correct value
-bigM = 1e3
+# Work nodes
+N = vrp.get_N_set() # TODO
+
+# End depots
+N_z = vrp.get_Nz_set()
+# End depot for machine (key)
+z = vrp.get_z_dict()
+
+# All nodes
+N_a = vrp.get_Na_set # TODO
+# Work duration
+a = vrp.get_a_dict()
+# Travel time
+r = vrp.get_r_dict()
+# Travel cost
+d = vrp.get_d_dict()
+# Customer cost coefficient
+c = vrp.get_c_dict()
+
+# Machine nodes
+M = vrp.get_M_set # TODO
+m = len(M) # number of machines
+
+# Minutes in a day minues job (i) time
+u = vrp.get_u_dict() # TODO
+# u = u - a
+
+# Max number of days needed
+d_max = 100 # TODO
+
+# Start time
+td0 = 0
+tm0 = 0
 
 
 # Define model instance
@@ -53,7 +81,7 @@ for i in N_a:
 # t^m_i:    The execution time (minutes) of a job i ∈ N_a is given by the decision variables t^d_i and t^m_i.
 tm = {}
 for i in N_a:
-    tm[i] = model.addVar(lb=0, ub=u, vtype=gp.GRB.CONTINUOUS, name=f"Job {i} is executed on minute:")
+    tm[i] = model.addVar(lb=0, ub=u_max, vtype=gp.GRB.CONTINUOUS, name=f"Job {i} is executed on minute:")
 
 model.update()
 
@@ -122,6 +150,14 @@ for i in N_s.union(N):
         model.addLConstr(lhs=lhs19, sense=gp.GRB.LESS_EQUAL, rhs=rhs, name=f"(19) i={i}, j={j}")
 
 # TODO (21) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+for k in M:
+    lhs21_1 = gp.LinExpr()
+    lhs21_2 = gp.LinExpr()
+    lhs21_1 += td[s[k]] - td0
+    lhs21_2 += tm[s[k]] - tm0
+    rhs = 0
+    model.addLConstr(lhs=lhs21_1, sense=gp.GRB.EQUAL, rhs=rhs, name=f"(21_1 start day) k={k}")
+    model.addLConstr(lhs=lhs21_2, sense=gp.GRB.EQUAL, rhs=rhs, name=f"(21_2 start minute) k={k}")
 
 for i in N_s.union(N):
     for j in N_z.union(N):
@@ -151,4 +187,24 @@ for i in N_a:
     model.addLConstr(lhs=lhs24_1, sense=gp.GRB.LESS_EQUAL, rhs=rhs, name=f"(24_1) i={i}")
     model.addLConstr(lhs=lhs24_2, sense=gp.GRB.LESS_EQUAL, rhs=rhs, name=f"(24_2) i={i}")
 
-# TODO IMPLEMENT u[i] functionality
+model.update()
+
+#################
+### Objective ###
+#################
+
+obj        = gp.LinExpr() 
+
+for i in N_a: # N_a: All jobs and depots
+    for j in N_a: # N_a\{i}: All jobs and depots excluding i
+        # Exclude the case where i and j are the same job/depot
+        if i == j:
+            continue
+
+        obj += d[(i, j)] * x[(i, j)]
+
+for i in N:
+    obj += c[i] * td[i] 
+
+model.setObjective(obj, gp.GRB.MINIMIZE)
+model.update()
