@@ -1,25 +1,25 @@
 import numpy as np
 import gurobipy as gp
-import VRP
+from VRP import VRP
 
 # Constants
 u_max = 480 # Minutes in a working day
 h = 1440 # Minutes in a day
 # TODO choose correct value
-bigM = 1e3
+bigM = 1e6
 
 #####################
 ### READ DATABASE ###
 #####################
 
-vrp = VRP("data_example_2.xlsx")
+vrp = VRP("test cases/test_case_2.xlsx")
 # Start depots
 N_s = vrp.get_Ns_set()
 # Start depot for machine (key)
 s = vrp.get_s_dict()
 
 # Work nodes
-N = vrp.get_N_set() # TODO
+N = vrp.get_N_set()
 
 # End depots
 N_z = vrp.get_Nz_set()
@@ -27,7 +27,7 @@ N_z = vrp.get_Nz_set()
 z = vrp.get_z_dict()
 
 # All nodes
-N_a = vrp.get_Na_set # TODO
+N_a = vrp.get_Na_set()
 # Work duration
 a = vrp.get_a_dict()
 # Travel time
@@ -38,11 +38,11 @@ d = vrp.get_d_dict()
 c = vrp.get_c_dict()
 
 # Machine nodes
-M = vrp.get_M_set # TODO
+M = vrp.get_M_set()
 m = len(M) # number of machines
 
 # Minutes in a day minues job (i) time
-u = vrp.get_u_dict() # TODO
+u = vrp.get_u_dict()
 # u = u - a
 
 # Max number of days needed
@@ -65,7 +65,7 @@ model = gp.Model("VRP-CC")
 x = {}
 for i in N_a:
     for j in N_a:
-        x[(i, j)] = model.addVar(lb=0, ub=1, vtype=gp.GRB.BINARY, name=f"Is job {j} predecessor of job {i}?")
+        x[(i, j)] = model.addVar(lb=0, ub=1, vtype=gp.GRB.BINARY, name=f"Is job {i} predecessor of job {j}?")
 
 # y_i:      The integer variable y_i represents the machine that executes job i
 #           A variable is made for every job and depot.
@@ -76,12 +76,12 @@ for i in N_a:
 # t^d_i:    The execution time (days) of a job i ∈ N_a is given by the decision variables t^d_i and t^m_i.
 td = {}
 for i in N_a:
-    td[i] = model.addVar(lb=0, ub=float('inf'), vtype=gp.GRB.CONTINUOUS, name=f"Job {i} is executed on day:")
+    td[i] = model.addVar(lb=0, ub=float('inf'), vtype=gp.GRB.INTEGER, name=f"Job {i} is executed on day:")
 
 # t^m_i:    The execution time (minutes) of a job i ∈ N_a is given by the decision variables t^d_i and t^m_i.
 tm = {}
 for i in N_a:
-    tm[i] = model.addVar(lb=0, ub=u_max, vtype=gp.GRB.CONTINUOUS, name=f"Job {i} is executed on minute:")
+    tm[i] = model.addVar(lb=0, ub=u_max, vtype=gp.GRB.INTEGER, name=f"Job {i} is executed on minute:")
 
 model.update()
 
@@ -149,7 +149,6 @@ for i in N_s.union(N):
         rhs = 0
         model.addLConstr(lhs=lhs19, sense=gp.GRB.LESS_EQUAL, rhs=rhs, name=f"(19) i={i}, j={j}")
 
-# TODO (21) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 for k in M:
     lhs21_1 = gp.LinExpr()
     lhs21_2 = gp.LinExpr()
@@ -171,7 +170,7 @@ for i in N_s.union(N):
 
 for i in N_a:
     lhs23_1 = gp.LinExpr()
-    lhs23_1 += td[0] - td[i]
+    lhs23_1 += td0 - td[i]
     lhs23_2 = gp.LinExpr()
     lhs23_2 += td[i] - d_max
     rhs = 0
@@ -200,6 +199,9 @@ for i in N_a: # N_a: All jobs and depots
         # Exclude the case where i and j are the same job/depot
         if i == j:
             continue
+        # Exclude the case from going from the end depot to next route start depot in the tour
+        if (i in N_z) and (j in N_s):
+            continue
 
         obj += d[(i, j)] * x[(i, j)]
 
@@ -208,3 +210,21 @@ for i in N:
 
 model.setObjective(obj, gp.GRB.MINIMIZE)
 model.update()
+
+################
+### Optimize ###
+################
+
+# Writing the .lp file. Important for debugging
+model.write('model_formulation.lp')    
+
+# Here the model is actually being optimized
+model.optimize()
+
+# Saving our solution in the form [name of variable, value of variable]
+solution = []
+for v in model.getVars():
+     print(v.varName, v.x)
+     solution.append([v.varName,v.x])
+     
+# print(solution)
