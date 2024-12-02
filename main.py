@@ -1,6 +1,6 @@
 import numpy as np
 import gurobipy as gp
-import VRP
+from VRP import VRP
 
 # Constants
 u_max = 480 # Minutes in a working day
@@ -12,14 +12,14 @@ bigM = 1e3
 ### READ DATABASE ###
 #####################
 
-vrp = VRP("data_example_2.xlsx")
+vrp = VRP("test cases/test_case_2.xlsx")
 # Start depots
 N_s = vrp.get_Ns_set()
 # Start depot for machine (key)
 s = vrp.get_s_dict()
 
 # Work nodes
-N = vrp.get_N_set() # TODO
+N = vrp.get_N_set()
 
 # End depots
 N_z = vrp.get_Nz_set()
@@ -27,7 +27,7 @@ N_z = vrp.get_Nz_set()
 z = vrp.get_z_dict()
 
 # All nodes
-N_a = vrp.get_Na_set # TODO
+N_a = vrp.get_Na_set()
 # Work duration
 a = vrp.get_a_dict()
 # Travel time
@@ -38,11 +38,11 @@ d = vrp.get_d_dict()
 c = vrp.get_c_dict()
 
 # Machine nodes
-M = vrp.get_M_set # TODO
+M = vrp.get_M_set()
 m = len(M) # number of machines
 
 # Minutes in a day minues job (i) time
-u = vrp.get_u_dict() # TODO
+u = vrp.get_u_dict()
 # u = u - a
 
 # Max number of days needed
@@ -171,7 +171,7 @@ for i in N_s.union(N):
 
 for i in N_a:
     lhs23_1 = gp.LinExpr()
-    lhs23_1 += td[0] - td[i]
+    lhs23_1 += td0 - td[i]
     lhs23_2 = gp.LinExpr()
     lhs23_2 += td[i] - d_max
     rhs = 0
