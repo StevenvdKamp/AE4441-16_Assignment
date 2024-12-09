@@ -5,8 +5,10 @@ from VRP import VRP
 # Constants
 u_max = 480 # Minutes in a working day
 h = 1440 # Minutes in a day
+# Max number of days needed
+d_max = 1000 # TODO
 # TODO choose correct value
-bigM = 1e6
+bigM = (d_max+1)*h
 
 #####################
 ### READ DATABASE ###
@@ -44,9 +46,6 @@ m = len(M) # number of machines
 # Minutes in a day minues job (i) time
 u = vrp.get_u_dict()
 # u = u - a
-
-# Max number of days needed
-d_max = 100 # TODO
 
 # Start time
 td0 = 0
