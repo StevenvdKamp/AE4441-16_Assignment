@@ -1,6 +1,7 @@
 import numpy as np
 import gurobipy as gp
 from VRP import VRP
+import pandas as pd
 
 # Constants
 u_max = 480 # Minutes in a working day
@@ -14,7 +15,7 @@ bigM = (d_max+1)*h
 ### READ DATABASE ###
 #####################
 
-vrp = VRP("test cases/test_case_2.xlsx")
+vrp = VRP("generated_test_case.xlsx")
 # Start depots
 N_s = vrp.get_Ns_set()
 # Start depot for machine (key)
@@ -227,3 +228,18 @@ for v in model.getVars():
      solution.append([v.varName,v.x])
      
 # print(solution)
+
+#######################
+### Export solution ###
+#######################
+
+# Convert the solution list to a DataFrame
+solution_df = pd.DataFrame(solution, columns=["Variable Name", "Value"])
+
+# Export the DataFrame to a CSV file
+solution_df.to_csv("vrp_solution.csv", index=False)
+
+# Optionally export to Excel as well
+solution_df.to_excel("vrp_solution.xlsx", index=False)
+
+print("Solution exported to vrp_solution.csv and vrp_solution.xlsx.")
