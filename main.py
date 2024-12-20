@@ -15,7 +15,7 @@ bigM = (d_max+1)*h
 ### READ DATABASE ###
 #####################
 
-vrp = VRP("generated_test_case.xlsx")
+vrp = VRP(r"test cases\test_case_6.xlsx")
 # Start depots
 N_s = vrp.get_Ns_set()
 # Start depot for machine (key)
@@ -237,9 +237,9 @@ for v in model.getVars():
 solution_df = pd.DataFrame(solution, columns=["Variable Name", "Value"])
 
 # Export the DataFrame to a CSV file
-solution_df.to_csv("vrp_solution.csv", index=False)
+solution_df.to_csv(r"solutions\vrp_solution_test_case_6.csv", index=False)
 
 # Optionally export to Excel as well
-solution_df.to_excel("vrp_solution.xlsx", index=False)
+solution_df.to_excel(r"solutions\vrp_solution_test_case_6.xlsx", index=False)
 
-print("Solution exported to vrp_solution.csv and vrp_solution.xlsx.")
+print("Solution exported to solutions\ vrp_solution.csv and vrp_solution.xlsx.")
