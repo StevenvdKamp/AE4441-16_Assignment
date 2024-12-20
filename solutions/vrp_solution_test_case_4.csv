@@ -1,0 +1,41 @@
+Variable Name,Value
+Is job 1 predecessor of job 1?,0.0
+Is job 1 predecessor of job 2?,0.0
+Is job 1 predecessor of job 3?,1.0
+Is job 1 predecessor of job s1?,0.0
+Is job 1 predecessor of job z1?,-0.0
+Is job 2 predecessor of job 1?,1.0
+Is job 2 predecessor of job 2?,0.0
+Is job 2 predecessor of job 3?,0.0
+Is job 2 predecessor of job s1?,0.0
+Is job 2 predecessor of job z1?,0.0
+Is job 3 predecessor of job 1?,0.0
+Is job 3 predecessor of job 2?,0.0
+Is job 3 predecessor of job 3?,0.0
+Is job 3 predecessor of job s1?,0.0
+Is job 3 predecessor of job z1?,1.0
+Is job s1 predecessor of job 1?,0.0
+Is job s1 predecessor of job 2?,1.0
+Is job s1 predecessor of job 3?,0.0
+Is job s1 predecessor of job s1?,0.0
+Is job s1 predecessor of job z1?,0.0
+Is job z1 predecessor of job 1?,0.0
+Is job z1 predecessor of job 2?,0.0
+Is job z1 predecessor of job 3?,0.0
+Is job z1 predecessor of job s1?,1.0
+Is job z1 predecessor of job z1?,0.0
+Job 1 is executed by machine:,1.0
+Job 2 is executed by machine:,1.0
+Job 3 is executed by machine:,1.0
+Job s1 is executed by machine:,1.0
+Job z1 is executed by machine:,1.0
+Job 1 is executed on day:,1.0
+Job 2 is executed on day:,0.0
+Job 3 is executed on day:,1.0
+Job s1 is executed on day:,0.0
+Job z1 is executed on day:,1000.0
+Job 1 is executed on minute:,170.0
+Job 2 is executed on minute:,10.0
+Job 3 is executed on minute:,280.0
+Job s1 is executed on minute:,0.0
+Job z1 is executed on minute:,480.0

@@ -1,0 +1,419 @@
+Variable Name,Value
+Is job 1 predecessor of job 1?,0.0
+Is job 1 predecessor of job 2?,0.0
+Is job 1 predecessor of job 3?,0.0
+Is job 1 predecessor of job 4?,0.0
+Is job 1 predecessor of job 5?,0.0
+Is job 1 predecessor of job 6?,0.0
+Is job 1 predecessor of job 7?,0.0
+Is job 1 predecessor of job 8?,0.0
+Is job 1 predecessor of job 9?,1.0
+Is job 1 predecessor of job 10?,0.0
+Is job 1 predecessor of job 11?,0.0
+Is job 1 predecessor of job 12?,0.0
+Is job 1 predecessor of job 13?,0.0
+Is job 1 predecessor of job 14?,0.0
+Is job 1 predecessor of job 15?,0.0
+Is job 1 predecessor of job z2?,0.0
+Is job 1 predecessor of job s2?,0.0
+Is job 1 predecessor of job s1?,0.0
+Is job 1 predecessor of job z1?,0.0
+Is job 2 predecessor of job 1?,0.0
+Is job 2 predecessor of job 2?,0.0
+Is job 2 predecessor of job 3?,0.0
+Is job 2 predecessor of job 4?,0.0
+Is job 2 predecessor of job 5?,0.0
+Is job 2 predecessor of job 6?,0.0
+Is job 2 predecessor of job 7?,0.0
+Is job 2 predecessor of job 8?,0.0
+Is job 2 predecessor of job 9?,0.0
+Is job 2 predecessor of job 10?,0.0
+Is job 2 predecessor of job 11?,0.0
+Is job 2 predecessor of job 12?,0.0
+Is job 2 predecessor of job 13?,0.0
+Is job 2 predecessor of job 14?,1.0
+Is job 2 predecessor of job 15?,0.0
+Is job 2 predecessor of job z2?,0.0
+Is job 2 predecessor of job s2?,0.0
+Is job 2 predecessor of job s1?,0.0
+Is job 2 predecessor of job z1?,0.0
+Is job 3 predecessor of job 1?,0.0
+Is job 3 predecessor of job 2?,0.0
+Is job 3 predecessor of job 3?,0.0
+Is job 3 predecessor of job 4?,1.0
+Is job 3 predecessor of job 5?,0.0
+Is job 3 predecessor of job 6?,0.0
+Is job 3 predecessor of job 7?,0.0
+Is job 3 predecessor of job 8?,0.0
+Is job 3 predecessor of job 9?,0.0
+Is job 3 predecessor of job 10?,0.0
+Is job 3 predecessor of job 11?,0.0
+Is job 3 predecessor of job 12?,0.0
+Is job 3 predecessor of job 13?,0.0
+Is job 3 predecessor of job 14?,0.0
+Is job 3 predecessor of job 15?,0.0
+Is job 3 predecessor of job z2?,0.0
+Is job 3 predecessor of job s2?,0.0
+Is job 3 predecessor of job s1?,0.0
+Is job 3 predecessor of job z1?,0.0
+Is job 4 predecessor of job 1?,0.0
+Is job 4 predecessor of job 2?,0.0
+Is job 4 predecessor of job 3?,0.0
+Is job 4 predecessor of job 4?,0.0
+Is job 4 predecessor of job 5?,0.0
+Is job 4 predecessor of job 6?,1.0
+Is job 4 predecessor of job 7?,0.0
+Is job 4 predecessor of job 8?,0.0
+Is job 4 predecessor of job 9?,0.0
+Is job 4 predecessor of job 10?,0.0
+Is job 4 predecessor of job 11?,0.0
+Is job 4 predecessor of job 12?,0.0
+Is job 4 predecessor of job 13?,0.0
+Is job 4 predecessor of job 14?,0.0
+Is job 4 predecessor of job 15?,0.0
+Is job 4 predecessor of job z2?,0.0
+Is job 4 predecessor of job s2?,0.0
+Is job 4 predecessor of job s1?,0.0
+Is job 4 predecessor of job z1?,0.0
+Is job 5 predecessor of job 1?,0.0
+Is job 5 predecessor of job 2?,0.0
+Is job 5 predecessor of job 3?,0.0
+Is job 5 predecessor of job 4?,0.0
+Is job 5 predecessor of job 5?,0.0
+Is job 5 predecessor of job 6?,0.0
+Is job 5 predecessor of job 7?,0.0
+Is job 5 predecessor of job 8?,0.0
+Is job 5 predecessor of job 9?,0.0
+Is job 5 predecessor of job 10?,0.0
+Is job 5 predecessor of job 11?,0.0
+Is job 5 predecessor of job 12?,1.0
+Is job 5 predecessor of job 13?,0.0
+Is job 5 predecessor of job 14?,0.0
+Is job 5 predecessor of job 15?,0.0
+Is job 5 predecessor of job z2?,0.0
+Is job 5 predecessor of job s2?,0.0
+Is job 5 predecessor of job s1?,0.0
+Is job 5 predecessor of job z1?,0.0
+Is job 6 predecessor of job 1?,0.0
+Is job 6 predecessor of job 2?,0.0
+Is job 6 predecessor of job 3?,0.0
+Is job 6 predecessor of job 4?,0.0
+Is job 6 predecessor of job 5?,0.0
+Is job 6 predecessor of job 6?,0.0
+Is job 6 predecessor of job 7?,0.0
+Is job 6 predecessor of job 8?,0.0
+Is job 6 predecessor of job 9?,0.0
+Is job 6 predecessor of job 10?,0.0
+Is job 6 predecessor of job 11?,0.0
+Is job 6 predecessor of job 12?,0.0
+Is job 6 predecessor of job 13?,0.0
+Is job 6 predecessor of job 14?,0.0
+Is job 6 predecessor of job 15?,1.0
+Is job 6 predecessor of job z2?,0.0
+Is job 6 predecessor of job s2?,0.0
+Is job 6 predecessor of job s1?,0.0
+Is job 6 predecessor of job z1?,0.0
+Is job 7 predecessor of job 1?,0.0
+Is job 7 predecessor of job 2?,1.0
+Is job 7 predecessor of job 3?,0.0
+Is job 7 predecessor of job 4?,0.0
+Is job 7 predecessor of job 5?,0.0
+Is job 7 predecessor of job 6?,0.0
+Is job 7 predecessor of job 7?,0.0
+Is job 7 predecessor of job 8?,0.0
+Is job 7 predecessor of job 9?,0.0
+Is job 7 predecessor of job 10?,0.0
+Is job 7 predecessor of job 11?,0.0
+Is job 7 predecessor of job 12?,0.0
+Is job 7 predecessor of job 13?,0.0
+Is job 7 predecessor of job 14?,0.0
+Is job 7 predecessor of job 15?,0.0
+Is job 7 predecessor of job z2?,0.0
+Is job 7 predecessor of job s2?,0.0
+Is job 7 predecessor of job s1?,0.0
+Is job 7 predecessor of job z1?,0.0
+Is job 8 predecessor of job 1?,0.0
+Is job 8 predecessor of job 2?,0.0
+Is job 8 predecessor of job 3?,0.0
+Is job 8 predecessor of job 4?,0.0
+Is job 8 predecessor of job 5?,1.0
+Is job 8 predecessor of job 6?,0.0
+Is job 8 predecessor of job 7?,0.0
+Is job 8 predecessor of job 8?,0.0
+Is job 8 predecessor of job 9?,0.0
+Is job 8 predecessor of job 10?,0.0
+Is job 8 predecessor of job 11?,0.0
+Is job 8 predecessor of job 12?,0.0
+Is job 8 predecessor of job 13?,0.0
+Is job 8 predecessor of job 14?,0.0
+Is job 8 predecessor of job 15?,0.0
+Is job 8 predecessor of job z2?,0.0
+Is job 8 predecessor of job s2?,0.0
+Is job 8 predecessor of job s1?,0.0
+Is job 8 predecessor of job z1?,0.0
+Is job 9 predecessor of job 1?,0.0
+Is job 9 predecessor of job 2?,0.0
+Is job 9 predecessor of job 3?,0.0
+Is job 9 predecessor of job 4?,0.0
+Is job 9 predecessor of job 5?,0.0
+Is job 9 predecessor of job 6?,0.0
+Is job 9 predecessor of job 7?,1.0
+Is job 9 predecessor of job 8?,0.0
+Is job 9 predecessor of job 9?,0.0
+Is job 9 predecessor of job 10?,0.0
+Is job 9 predecessor of job 11?,0.0
+Is job 9 predecessor of job 12?,0.0
+Is job 9 predecessor of job 13?,0.0
+Is job 9 predecessor of job 14?,0.0
+Is job 9 predecessor of job 15?,0.0
+Is job 9 predecessor of job z2?,0.0
+Is job 9 predecessor of job s2?,0.0
+Is job 9 predecessor of job s1?,0.0
+Is job 9 predecessor of job z1?,0.0
+Is job 10 predecessor of job 1?,0.0
+Is job 10 predecessor of job 2?,0.0
+Is job 10 predecessor of job 3?,0.0
+Is job 10 predecessor of job 4?,0.0
+Is job 10 predecessor of job 5?,0.0
+Is job 10 predecessor of job 6?,0.0
+Is job 10 predecessor of job 7?,0.0
+Is job 10 predecessor of job 8?,0.0
+Is job 10 predecessor of job 9?,0.0
+Is job 10 predecessor of job 10?,0.0
+Is job 10 predecessor of job 11?,0.0
+Is job 10 predecessor of job 12?,0.0
+Is job 10 predecessor of job 13?,0.0
+Is job 10 predecessor of job 14?,0.0
+Is job 10 predecessor of job 15?,0.0
+Is job 10 predecessor of job z2?,0.0
+Is job 10 predecessor of job s2?,0.0
+Is job 10 predecessor of job s1?,0.0
+Is job 10 predecessor of job z1?,1.0
+Is job 11 predecessor of job 1?,0.0
+Is job 11 predecessor of job 2?,0.0
+Is job 11 predecessor of job 3?,1.0
+Is job 11 predecessor of job 4?,0.0
+Is job 11 predecessor of job 5?,0.0
+Is job 11 predecessor of job 6?,0.0
+Is job 11 predecessor of job 7?,0.0
+Is job 11 predecessor of job 8?,0.0
+Is job 11 predecessor of job 9?,0.0
+Is job 11 predecessor of job 10?,0.0
+Is job 11 predecessor of job 11?,0.0
+Is job 11 predecessor of job 12?,0.0
+Is job 11 predecessor of job 13?,0.0
+Is job 11 predecessor of job 14?,0.0
+Is job 11 predecessor of job 15?,0.0
+Is job 11 predecessor of job z2?,0.0
+Is job 11 predecessor of job s2?,0.0
+Is job 11 predecessor of job s1?,0.0
+Is job 11 predecessor of job z1?,0.0
+Is job 12 predecessor of job 1?,1.0
+Is job 12 predecessor of job 2?,0.0
+Is job 12 predecessor of job 3?,0.0
+Is job 12 predecessor of job 4?,0.0
+Is job 12 predecessor of job 5?,0.0
+Is job 12 predecessor of job 6?,0.0
+Is job 12 predecessor of job 7?,0.0
+Is job 12 predecessor of job 8?,0.0
+Is job 12 predecessor of job 9?,0.0
+Is job 12 predecessor of job 10?,0.0
+Is job 12 predecessor of job 11?,0.0
+Is job 12 predecessor of job 12?,0.0
+Is job 12 predecessor of job 13?,0.0
+Is job 12 predecessor of job 14?,0.0
+Is job 12 predecessor of job 15?,0.0
+Is job 12 predecessor of job z2?,0.0
+Is job 12 predecessor of job s2?,0.0
+Is job 12 predecessor of job s1?,0.0
+Is job 12 predecessor of job z1?,0.0
+Is job 13 predecessor of job 1?,0.0
+Is job 13 predecessor of job 2?,0.0
+Is job 13 predecessor of job 3?,0.0
+Is job 13 predecessor of job 4?,0.0
+Is job 13 predecessor of job 5?,0.0
+Is job 13 predecessor of job 6?,0.0
+Is job 13 predecessor of job 7?,0.0
+Is job 13 predecessor of job 8?,0.0
+Is job 13 predecessor of job 9?,0.0
+Is job 13 predecessor of job 10?,0.0
+Is job 13 predecessor of job 11?,1.0
+Is job 13 predecessor of job 12?,0.0
+Is job 13 predecessor of job 13?,0.0
+Is job 13 predecessor of job 14?,0.0
+Is job 13 predecessor of job 15?,0.0
+Is job 13 predecessor of job z2?,0.0
+Is job 13 predecessor of job s2?,0.0
+Is job 13 predecessor of job s1?,0.0
+Is job 13 predecessor of job z1?,0.0
+Is job 14 predecessor of job 1?,0.0
+Is job 14 predecessor of job 2?,0.0
+Is job 14 predecessor of job 3?,0.0
+Is job 14 predecessor of job 4?,0.0
+Is job 14 predecessor of job 5?,0.0
+Is job 14 predecessor of job 6?,0.0
+Is job 14 predecessor of job 7?,0.0
+Is job 14 predecessor of job 8?,0.0
+Is job 14 predecessor of job 9?,0.0
+Is job 14 predecessor of job 10?,0.0
+Is job 14 predecessor of job 11?,0.0
+Is job 14 predecessor of job 12?,0.0
+Is job 14 predecessor of job 13?,0.0
+Is job 14 predecessor of job 14?,0.0
+Is job 14 predecessor of job 15?,0.0
+Is job 14 predecessor of job z2?,1.0
+Is job 14 predecessor of job s2?,0.0
+Is job 14 predecessor of job s1?,0.0
+Is job 14 predecessor of job z1?,0.0
+Is job 15 predecessor of job 1?,0.0
+Is job 15 predecessor of job 2?,0.0
+Is job 15 predecessor of job 3?,0.0
+Is job 15 predecessor of job 4?,0.0
+Is job 15 predecessor of job 5?,0.0
+Is job 15 predecessor of job 6?,0.0
+Is job 15 predecessor of job 7?,0.0
+Is job 15 predecessor of job 8?,0.0
+Is job 15 predecessor of job 9?,0.0
+Is job 15 predecessor of job 10?,1.0
+Is job 15 predecessor of job 11?,0.0
+Is job 15 predecessor of job 12?,0.0
+Is job 15 predecessor of job 13?,0.0
+Is job 15 predecessor of job 14?,0.0
+Is job 15 predecessor of job 15?,0.0
+Is job 15 predecessor of job z2?,0.0
+Is job 15 predecessor of job s2?,0.0
+Is job 15 predecessor of job s1?,0.0
+Is job 15 predecessor of job z1?,0.0
+Is job z2 predecessor of job 1?,0.0
+Is job z2 predecessor of job 2?,0.0
+Is job z2 predecessor of job 3?,0.0
+Is job z2 predecessor of job 4?,0.0
+Is job z2 predecessor of job 5?,0.0
+Is job z2 predecessor of job 6?,0.0
+Is job z2 predecessor of job 7?,0.0
+Is job z2 predecessor of job 8?,0.0
+Is job z2 predecessor of job 9?,0.0
+Is job z2 predecessor of job 10?,0.0
+Is job z2 predecessor of job 11?,0.0
+Is job z2 predecessor of job 12?,0.0
+Is job z2 predecessor of job 13?,0.0
+Is job z2 predecessor of job 14?,0.0
+Is job z2 predecessor of job 15?,0.0
+Is job z2 predecessor of job z2?,0.0
+Is job z2 predecessor of job s2?,0.0
+Is job z2 predecessor of job s1?,1.0
+Is job z2 predecessor of job z1?,0.0
+Is job s2 predecessor of job 1?,0.0
+Is job s2 predecessor of job 2?,0.0
+Is job s2 predecessor of job 3?,0.0
+Is job s2 predecessor of job 4?,0.0
+Is job s2 predecessor of job 5?,0.0
+Is job s2 predecessor of job 6?,0.0
+Is job s2 predecessor of job 7?,0.0
+Is job s2 predecessor of job 8?,1.0
+Is job s2 predecessor of job 9?,0.0
+Is job s2 predecessor of job 10?,0.0
+Is job s2 predecessor of job 11?,0.0
+Is job s2 predecessor of job 12?,0.0
+Is job s2 predecessor of job 13?,0.0
+Is job s2 predecessor of job 14?,0.0
+Is job s2 predecessor of job 15?,0.0
+Is job s2 predecessor of job z2?,0.0
+Is job s2 predecessor of job s2?,0.0
+Is job s2 predecessor of job s1?,0.0
+Is job s2 predecessor of job z1?,0.0
+Is job s1 predecessor of job 1?,0.0
+Is job s1 predecessor of job 2?,0.0
+Is job s1 predecessor of job 3?,0.0
+Is job s1 predecessor of job 4?,0.0
+Is job s1 predecessor of job 5?,0.0
+Is job s1 predecessor of job 6?,0.0
+Is job s1 predecessor of job 7?,0.0
+Is job s1 predecessor of job 8?,0.0
+Is job s1 predecessor of job 9?,0.0
+Is job s1 predecessor of job 10?,0.0
+Is job s1 predecessor of job 11?,0.0
+Is job s1 predecessor of job 12?,0.0
+Is job s1 predecessor of job 13?,1.0
+Is job s1 predecessor of job 14?,0.0
+Is job s1 predecessor of job 15?,0.0
+Is job s1 predecessor of job z2?,0.0
+Is job s1 predecessor of job s2?,0.0
+Is job s1 predecessor of job s1?,0.0
+Is job s1 predecessor of job z1?,0.0
+Is job z1 predecessor of job 1?,0.0
+Is job z1 predecessor of job 2?,0.0
+Is job z1 predecessor of job 3?,0.0
+Is job z1 predecessor of job 4?,0.0
+Is job z1 predecessor of job 5?,0.0
+Is job z1 predecessor of job 6?,0.0
+Is job z1 predecessor of job 7?,0.0
+Is job z1 predecessor of job 8?,0.0
+Is job z1 predecessor of job 9?,0.0
+Is job z1 predecessor of job 10?,0.0
+Is job z1 predecessor of job 11?,0.0
+Is job z1 predecessor of job 12?,0.0
+Is job z1 predecessor of job 13?,0.0
+Is job z1 predecessor of job 14?,0.0
+Is job z1 predecessor of job 15?,0.0
+Is job z1 predecessor of job z2?,0.0
+Is job z1 predecessor of job s2?,1.0
+Is job z1 predecessor of job s1?,0.0
+Is job z1 predecessor of job z1?,0.0
+Job 1 is executed by machine:,2.0
+Job 2 is executed by machine:,2.0
+Job 3 is executed by machine:,1.0
+Job 4 is executed by machine:,1.0
+Job 5 is executed by machine:,2.0
+Job 6 is executed by machine:,1.0
+Job 7 is executed by machine:,2.0
+Job 8 is executed by machine:,2.0
+Job 9 is executed by machine:,2.0
+Job 10 is executed by machine:,1.0
+Job 11 is executed by machine:,1.0
+Job 12 is executed by machine:,2.0
+Job 13 is executed by machine:,1.0
+Job 14 is executed by machine:,2.0
+Job 15 is executed by machine:,1.0
+Job z2 is executed by machine:,2.0
+Job s2 is executed by machine:,2.0
+Job s1 is executed by machine:,1.0
+Job z1 is executed by machine:,1.0
+Job 1 is executed on day:,1.0
+Job 2 is executed on day:,3.0
+Job 3 is executed on day:,0.0
+Job 4 is executed on day:,1.0
+Job 5 is executed on day:,0.0
+Job 6 is executed on day:,2.0
+Job 7 is executed on day:,2.0
+Job 8 is executed on day:,0.0
+Job 9 is executed on day:,2.0
+Job 10 is executed on day:,4.0
+Job 11 is executed on day:,0.0
+Job 12 is executed on day:,0.0
+Job 13 is executed on day:,0.0
+Job 14 is executed on day:,4.0
+Job 15 is executed on day:,3.0
+Job z2 is executed on day:,1000.0
+Job s2 is executed on day:,0.0
+Job s1 is executed on day:,0.0
+Job z1 is executed on day:,1000.0
+Job 1 is executed on minute:,68.0
+Job 2 is executed on minute:,0.0
+Job 3 is executed on minute:,175.0
+Job 4 is executed on minute:,31.0
+Job 5 is executed on minute:,189.0
+Job 6 is executed on minute:,0.0
+Job 7 is executed on minute:,311.0
+Job 8 is executed on minute:,48.0
+Job 9 is executed on minute:,0.0
+Job 10 is executed on minute:,0.0
+Job 11 is executed on minute:,35.0
+Job 12 is executed on minute:,283.0
+Job 13 is executed on minute:,25.0
+Job 14 is executed on minute:,0.0
+Job 15 is executed on minute:,86.0
+Job z2 is executed on minute:,480.0
+Job s2 is executed on minute:,0.0
+Job s1 is executed on minute:,0.0
+Job z1 is executed on minute:,480.0
