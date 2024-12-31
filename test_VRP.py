@@ -21,6 +21,12 @@ class test_VRP(unittest.TestCase):
 
         self.assertDictEqual(a_dict, {1: 20, 2: 40, 3: 100, 4: 0, 5: 0})
 
+    def test_get_a_dict_scaling(self):
+        vrp = VRP.VRP("test cases/test_case_1.xlsx")
+        a_dict = vrp.get_a_dict(scaling_factor=0.5)
+
+        self.assertDictEqual(a_dict, {1: 10, 2: 20, 3: 50, 4: 0, 5: 0})
+
     def test_get_u_dict(self):
         vrp = VRP.VRP("test cases/test_case_1.xlsx")
         u_dict = vrp.get_u_dict()
@@ -40,12 +46,26 @@ class test_VRP(unittest.TestCase):
         self.assertDictEqual(r_dict, {(1, 2): 600, (1, 3): 400, (2, 3): 100, (4, 1): 10, (5, 1): 20,
                                       (2, 1): 600, (3, 1): 400, (3, 2): 100, (1, 4): 10, (1, 5): 20})
 
+    def test_get_r_dict_scaling(self):
+        vrp = VRP.VRP("test cases/test_case_1.xlsx")
+        r_dict = vrp.get_r_dict(scaling_factor=0.5)
+
+        self.assertDictEqual(r_dict, {(1, 2): 300, (1, 3): 200, (2, 3): 50, (4, 1): 5, (5, 1): 10,
+                                      (2, 1): 300, (3, 1): 200, (3, 2): 50, (1, 4): 5, (1, 5): 10})
+
     def test_get_d_dict(self):
         vrp = VRP.VRP("test cases/test_case_1.xlsx")
         d_dict = vrp.get_d_dict()
 
         self.assertDictEqual(d_dict, {(1, 2): 4, (1, 3): 2, (2, 3): 3, (4, 1): 5, (5, 1): 10,
                                       (2, 1): 4, (3, 1): 2, (3, 2): 3, (1, 4): 5, (1, 5): 10})
+
+    def test_get_d_dict_scaling(self):
+        vrp = VRP.VRP("test cases/test_case_1.xlsx")
+        d_dict = vrp.get_d_dict(scaling_factor=0.5)
+
+        self.assertDictEqual(d_dict, {(1, 2): 2, (1, 3): 1, (2, 3): 1.5, (4, 1): 2.5, (5, 1): 5,
+                                      (2, 1): 2, (3, 1): 1, (3, 2): 1.5, (1, 4): 2.5, (1, 5): 5})
 
     def test_get_Ns_set(self):
         vrp = VRP.VRP("test cases/test_case_1.xlsx")

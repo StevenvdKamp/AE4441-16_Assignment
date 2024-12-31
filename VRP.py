@@ -15,18 +15,18 @@ class VRP():
     def get_z_dict(self):
         return pd.Series(self.df_machine_properties['End Depot'].values, index=self.df_machine_properties['Machine']).to_dict()
 
-    def get_a_dict(self):
-        return pd.Series(self.df_node_properties['Working Duration'].values, index=self.df_node_properties['Node']).to_dict()
+    def get_a_dict(self, scaling_factor=1):
+        return pd.Series(self.df_node_properties['Working Duration'].values * scaling_factor, index=self.df_node_properties['Node']).to_dict()
 
-    def get_u_dict(self):
-        a_dict = pd.Series(self.df_node_properties['Working Duration'].values, index=self.df_node_properties['Node']).to_dict()
+    def get_u_dict(self, scaling_factor=1):
+        a_dict = pd.Series(self.df_node_properties['Working Duration'].values * scaling_factor, index=self.df_node_properties['Node']).to_dict()
 
         return {key: 480 - value for key, value in a_dict.items()}
 
     def get_c_dict(self):
         return pd.Series(self.df_node_properties['Customer Cost Coefficient'].values, index=self.df_node_properties['Node']).to_dict()
 
-    def get_d_dict(self):
+    def get_d_dict(self, scaling_factor=1):
         start_nodes = self.df_node_connections['From'].values
         end_nodes = self.df_node_connections['To'].values
         travel_costs = self.df_node_connections['Cost'].values
@@ -34,12 +34,12 @@ class VRP():
         travel_costs_dict = {}
 
         for i in range(len(start_nodes)):
-            travel_costs_dict[(start_nodes[i], end_nodes[i])] = travel_costs[i]
-            travel_costs_dict[(end_nodes[i], start_nodes[i])] = travel_costs[i]
+            travel_costs_dict[(start_nodes[i], end_nodes[i])] = travel_costs[i] * scaling_factor
+            travel_costs_dict[(end_nodes[i], start_nodes[i])] = travel_costs[i] * scaling_factor
 
         return travel_costs_dict
 
-    def get_r_dict(self):
+    def get_r_dict(self, scaling_factor=1):
         start_nodes = self.df_node_connections['From'].values
         end_nodes = self.df_node_connections['To'].values
         travel_times = self.df_node_connections['Time [min]'].values
@@ -47,8 +47,8 @@ class VRP():
         travel_times_dict = {}
 
         for i in range(len(start_nodes)):
-            travel_times_dict[(start_nodes[i], end_nodes[i])] = travel_times[i]
-            travel_times_dict[(end_nodes[i], start_nodes[i])] = travel_times[i]
+            travel_times_dict[(start_nodes[i], end_nodes[i])] = travel_times[i] * scaling_factor
+            travel_times_dict[(end_nodes[i], start_nodes[i])] = travel_times[i] * scaling_factor
 
         return travel_times_dict
 
