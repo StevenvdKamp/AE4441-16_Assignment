@@ -7,15 +7,18 @@ import pandas as pd
 u_max = 480 # Minutes in a working day
 h = 1440 # Minutes in a day
 # Max number of days needed
-d_max = 1000 # TODO
+d_max = 100 # TODO
 # TODO choose correct value
 bigM = (d_max+1)*h
+
+# Manual inputs
+work_duration_multiplier = 1
 
 #####################
 ### READ DATABASE ###
 #####################
 
-vrp = VRP(r"test cases\test_case_6.xlsx")
+vrp = VRP(r"generated_test_case_12.xlsx")
 # Start depots
 N_s = vrp.get_Ns_set()
 # Start depot for machine (key)
@@ -32,7 +35,7 @@ z = vrp.get_z_dict()
 # All nodes
 N_a = vrp.get_Na_set()
 # Work duration
-a = vrp.get_a_dict()
+a = vrp.get_a_dict(work_duration_multiplier)
 # Travel time
 r = vrp.get_r_dict()
 # Travel cost
@@ -224,22 +227,30 @@ model.optimize()
 # Saving our solution in the form [name of variable, value of variable]
 solution = []
 for v in model.getVars():
-     print(v.varName, v.x)
-     solution.append([v.varName,v.x])
-     
-# print(solution)
+    # print(v.varName, v.x)
+    solution.append([v.varName,v.x])
 
 #######################
 ### Export solution ###
 #######################
+name = f"vrp_solution_sensitivity_work_duration_mult_{work_duration_multiplier}"
 
 # Convert the solution list to a DataFrame
 solution_df = pd.DataFrame(solution, columns=["Variable Name", "Value"])
 
 # Export the DataFrame to a CSV file
-solution_df.to_csv(r"solutions\vrp_solution_test_case_6.csv", index=False)
+solution_df.to_csv(f"solutions\{name}.csv", index=False)
 
 # Optionally export to Excel as well
-solution_df.to_excel(r"solutions\vrp_solution_test_case_6.xlsx", index=False)
+# solution_df.to_excel(f"solutions\{name}.xlsx", index=False)
 
 print("Solution exported to solutions\ vrp_solution.csv and vrp_solution.xlsx.")
+
+# Save objective value (score)
+score = model.ObjVal if model.status == gp.GRB.OPTIMAL else None
+score_file = f"solutions/{name}_score.txt"
+with open(score_file, "w") as f:
+    if score is not None:
+        f.write(f"Objective Value (Score): {score}\n")
+    else:
+        f.write("No optimal solution found.\n")
