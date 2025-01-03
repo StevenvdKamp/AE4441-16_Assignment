@@ -8,7 +8,6 @@ u_max = 480 # Minutes in a working day
 h = 1440 # Minutes in a day
 # Max number of days needed
 d_max = 100 # TODO
-# TODO choose correct value
 bigM = (d_max+1)*h
 
 # Manual inputs

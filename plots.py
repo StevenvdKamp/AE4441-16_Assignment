@@ -21,15 +21,15 @@ def plot_score_vs_speed_increase():
     ax.scatter(data, score, label='Score vs Speed Increase', color='blue', marker='o')
 
     # Labels and title
-    ax.set_xlabel('Increase in Maintenance Speed (%)')
-    ax.set_ylabel('Score')
+    ax.set_xlabel('Maintenance Speed (% of original)')
+    ax.set_ylabel('Total Cost')
     # ax.set_title('Score vs Increase in Speed')  # Title was commented out
     # Add a legend
     # ax.legend()  # Legend was commented out
 
-    # Save the plot to a PNG file
+    # Save the plot to a pdf file
     fig.tight_layout()
-    fig.savefig('work_duration_vs_score_plot.png', format='png', dpi=300)
+    fig.savefig('figures/work_duration_vs_score_plot.pdf', format='pdf', dpi=300)
 
     # Show the plot
     plt.show()
@@ -55,18 +55,18 @@ def plot_score_comparison():
     ax.bar(labels, scores, color='skyblue')
 
     # Labels and title
-    ax.set_ylabel('Score')
+    ax.set_ylabel('Total Cost')
     # ax.set_xlabel('Machine Configuration')
     # ax.set_title('Score Comparison with Different Machine Configurations')
 
-    # Save the plot to a PNG file
+    # Save the plot to a pdf file
     fig.tight_layout()
-    fig.savefig('machine_configuration_score_comparison.png', format='png', dpi=300)
+    fig.savefig('figures/machine_configuration_score_comparison.pdf', format='pdf', dpi=300)
 
     # Show the plot
     plt.show()
 
 # Example function calls to generate the plots
 plot_score_comparison()
-# plot_score_vs_speed_increase()
+plot_score_vs_speed_increase()
 

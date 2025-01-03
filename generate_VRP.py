@@ -66,7 +66,7 @@ MachineProperties = {
     "Start Depot": [f"s{machine}" for machine in M],
     "End Depot": [f"z{machine}" for machine in M],
 }
-file_name = f"generated_test_case_{num_jobs}.xlsx"
+file_name = f"test cases/generated_test_case_{num_jobs}.xlsx"
 with pd.ExcelWriter(file_name) as writer:
     pd.DataFrame(NodeConnections).to_excel(writer, sheet_name="Node Connections", index=False)
     pd.DataFrame(NodeProperties).to_excel(writer, sheet_name="Node Properties", index=False)
