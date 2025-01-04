@@ -7,7 +7,9 @@ import pandas as pd
 u_max = 480 # Minutes in a working day
 h = 1440 # Minutes in a day
 # Max number of days needed
+
 d_max = 100 # TODO
+
 # TODO choose correct value
 bigM = (d_max+1)*h
 
@@ -37,7 +39,7 @@ N_a = vrp.get_Na_set()
 # Work duration
 a = vrp.get_a_dict(work_duration_multiplier)
 # Travel time
-r = vrp.get_r_dict()
+r = vrp.get_r_dict(scaling_factor=2)
 # Travel cost
 d = vrp.get_d_dict()
 # Customer cost coefficient
@@ -229,6 +231,7 @@ solution = []
 for v in model.getVars():
     # print(v.varName, v.x)
     solution.append([v.varName,v.x])
+
 
 #######################
 ### Export solution ###

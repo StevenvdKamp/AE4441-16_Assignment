@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Function to plot the scatter graph for "Score vs Speed Increase"
 def plot_score_vs_speed_increase():
@@ -66,7 +67,49 @@ def plot_score_comparison():
     # Show the plot
     plt.show()
 
+
+def plot_score_vs_travel_times():
+    adjusted_travel_times = np.array([0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 2]) * 100
+    adjusted_travel_times_result = [753, 753, 797, 797, 797, 835, 836, 853, 853, 870, 870, 901]
+
+    plt.scatter(adjusted_travel_times, adjusted_travel_times_result, color='b', s=20, zorder=3)
+
+    #plt.title("Travel Costs Change vs Total Costs")
+    plt.xlabel("Travel Time (% of original)")
+    plt.ylabel("Total Costs")
+
+    # Enable minor ticks
+    plt.minorticks_on()
+
+    # Add major grid
+    plt.grid(which='major', linewidth=0.3, zorder=1)
+
+    # Add minor grid
+    plt.grid(which='minor', linewidth=0.2, zorder=1)
+
+    plt.show()
+
+def plot_score_vs_travel_costs():
+    adjusted_travel_costs = np.array([0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 2]) * 100
+    adjusted_travel_costs_result = [587.5, 637.2, 686.9, 736.6, 786.3, 835, 876.5, 915, 953.5, 992, 1030.5, 1223]
+
+    plt.scatter(adjusted_travel_costs, adjusted_travel_costs_result, color='b', s=20, zorder=3)
+
+    plt.xlabel("Travel Costs (% of original)")
+    plt.ylabel("Total Costs")
+
+    # Enable minor ticks
+    plt.minorticks_on()
+
+    # Add major grid
+    plt.grid(which='major', linewidth=0.3, zorder=1)
+
+    # Add minor grid
+    plt.grid(which='minor', linewidth=0.2, zorder=1)
+
+    plt.show()
+
 # Example function calls to generate the plots
-plot_score_comparison()
+plot_score_vs_travel_times()
 # plot_score_vs_speed_increase()
 
