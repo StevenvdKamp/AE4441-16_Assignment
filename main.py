@@ -10,7 +10,6 @@ h = 1440 # Minutes in a day
 
 d_max = 100 # TODO
 
-# TODO choose correct value
 bigM = (d_max+1)*h
 
 # Manual inputs
@@ -20,7 +19,7 @@ work_duration_multiplier = 1
 ### READ DATABASE ###
 #####################
 
-vrp = VRP(r"generated_test_case_12.xlsx")
+vrp = VRP(r"generated_test_case_12 - ExtraMachine4.xlsx")
 # Start depots
 N_s = vrp.get_Ns_set()
 # Start depot for machine (key)
@@ -236,7 +235,7 @@ for v in model.getVars():
 #######################
 ### Export solution ###
 #######################
-name = f"vrp_solution_sensitivity_work_duration_mult_{work_duration_multiplier}"
+name = f"vrp_solution_sensitivity_extra_machine4"
 
 # Convert the solution list to a DataFrame
 solution_df = pd.DataFrame(solution, columns=["Variable Name", "Value"])
